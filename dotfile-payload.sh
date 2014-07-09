@@ -25,9 +25,12 @@ cd ".dotfiles"
 
 # get rid of the readme file
 rm "README.md"
+rm -rf ".git"
 
 working_dir=`pwd`
 echo "We are now in $working_dir";
 pwd
 
-ln -sf * ~/
+cd
+
+find ".dotfiles" -type f -exec ln -sf {} \;
